@@ -1,3 +1,4 @@
+<?php //$this->start('category') ?>
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown"  role="button"
        aria-haspopup="true" aria-expanded="false">Категории</a>
@@ -9,3 +10,4 @@
         <li class=""><a href="index-material.html">Home Material</a></li>
     </ul>
 </li>
+<?php //$this->stop() ?>

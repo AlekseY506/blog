@@ -59,7 +59,7 @@
                             <a href="index.html">Главная</a>
                         </li>
                         <!--section category -->
-                            <?=$this->section('home') ?>
+                            <?=$this->insert('section/category') ?>
                         <!-- end section -->
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="/admin.html">adminLTE</a></li>
