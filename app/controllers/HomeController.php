@@ -21,7 +21,7 @@ class HomeController extends AppController
 
         $posts = $this->qb->getLimitPost('posts', 'id', $itemsPerPage);
 
-        //$category = $this->qb->getAll('categories');
+        $category = $this->qb->getAll('categories');
 
         $most_popular = $this->qb->getLimitPost('posts', 'view', 5);
 
@@ -34,7 +34,8 @@ class HomeController extends AppController
             'posts'        => $posts,
             'name'         => $this->auth->getUsername(),
             'most_popular' => $most_popular,
-            'latest_post' => $latest_post
+            'latest_post'  => $latest_post,
+            'category'   => $category
         ]);
     }
 
