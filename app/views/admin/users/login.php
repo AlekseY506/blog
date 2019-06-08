@@ -1,4 +1,4 @@
-<?php $this->layout('layouts', ['title' => 'Login page']) ?>
+<?php $this->layout('layouts/layouts', ['title' => 'Login page']) ?>
 
 <div class="kotha-default-content">
     <div class="container">

@@ -1,4 +1,4 @@
-<?php $this->layout('layouts', ['title' => 'Контакты', 'name' => $name]) ?>
+<?php $this->layout('layouts/layouts', ['title' => 'Контакты', 'name' => $name]) ?>
 
 <div class="kotha-default-content">
     <div class="container">
