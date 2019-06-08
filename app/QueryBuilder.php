@@ -37,10 +37,10 @@ class QueryBuilder
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function getAll($table){
+    public function getAll($table, $cols = "*"){
         $select = $this->queryFactory->newSelect();
 
-        $select->cols(["*"])
+        $select->cols([$cols])
             ->from($table);
 
         $sth = $this->pdo->prepare($select->getStatement());
@@ -50,13 +50,13 @@ class QueryBuilder
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAllId($table, $id)
+    public function getAllId($table, $id, $where = 'post_id')
     {
         $select = $this->queryFactory->newSelect();
 
         $select->cols(["*"])
             ->from($table)
-            ->where('post_id = :id')
+            ->where("$where = :id")
             ->bindValues([
                 'id' => $id,
             ]);

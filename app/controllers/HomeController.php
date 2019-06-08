@@ -27,12 +27,15 @@ class HomeController extends AppController
 
         $paginator = new Paginator(count($totalItems), $itemsPerPage, $currentPage, $urlPattern);
 
+        $categories = $this->qb->getAll('categories');
+
         echo $this->templates->render('home', [
             'paginator'    => $paginator,
             'posts'        => $posts,
             'name'         => $this->auth->getUsername(),
             'most_popular' => $most_popular,
-            'latest_post'  => $latest_post
+            'latest_post'  => $latest_post,
+            'categories'   => $categories
         ]);
     }
 

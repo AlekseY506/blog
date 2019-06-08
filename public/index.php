@@ -45,6 +45,7 @@ $container = $contBuilder->build();
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', ['App\controllers\HomeController', 'index']);
     $r->addRoute('GET', '/index.html[?page={id:\d+}]', ['App\controllers\HomeController', 'index']);
+    $r->addRoute('GET', '/page.html[?category={id:\d+}]', ['App\controllers\HomeController', 'category']);
     $r->addRoute('GET', '/login.html', ['App\controllers\UserController', 'login']);
     $r->addRoute('POST', '/validation-login.html', ['App\controllers\UserController', 'validationLogin']);
     $r->addRoute('GET', '/register.html', ['App\controllers\UserController', 'register']);
